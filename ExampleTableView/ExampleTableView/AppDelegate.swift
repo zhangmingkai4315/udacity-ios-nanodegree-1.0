@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Meme
+//  ExampleTableView
 //
 //  Created by mingkai on 2019/7/7.
 //  Copyright © 2019年 mingkai. All rights reserved.
@@ -13,8 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var memes = [Meme]()
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true

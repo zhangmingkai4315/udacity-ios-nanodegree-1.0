@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController,
+class EditorViewController: UIViewController,
 UIImagePickerControllerDelegate,
 UINavigationControllerDelegate{
     
@@ -89,30 +89,27 @@ UINavigationControllerDelegate{
         let image = generatedMemedImage()
         let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)
-        
-        
-        
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        imagePickerView.image = UIImage()
-        
+//        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     
     
     func save(memedImage: UIImage){
-//        let meme = Meme(
-//            topString: topTextField.text,
-//            bottomString: bottomTextField.text,
-//            originalImage: imagePickerView.image,
-//            memedImage: memedImage
-//            )
-//        print("save it \(meme.bottomString)")
+        let meme = Meme(
+            topString: topTextField.text,
+            bottomString: bottomTextField.text,
+            originalImage: imagePickerView.image,
+            memedImage: memedImage
+            )
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     @IBOutlet weak var toolbar: UIToolbar!
     func generatedMemedImage() -> UIImage{
-        
         var image = UIImage()
         
         navbar.isHidden = true
@@ -125,7 +122,7 @@ UINavigationControllerDelegate{
         navbar.isHidden = false
         toolbar.isHidden = false
         
-        
+        save(memedImage: image)
         return image
     }
     
