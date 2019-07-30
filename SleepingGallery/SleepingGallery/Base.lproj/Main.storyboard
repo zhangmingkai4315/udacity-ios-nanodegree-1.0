@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SleepingGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aKs-pc-J8B">
+                                <rect key="frame" x="10" y="575" width="355" height="77.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bfb-8T-H52">
+                                        <rect key="frame" x="151" y="0.0" width="53.5" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkH-dn-U2b">
+                                        <rect key="frame" x="142" y="47.5" width="71" height="30"/>
+                                        <state key="normal" title="Pull Image"/>
+                                        <connections>
+                                            <action selector="grabNewImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fDR-LA-zR7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JlR-uF-KCM">
+                                <rect key="frame" x="20" y="156" width="335" height="355"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JlR-uF-KCM" secondAttribute="height" multiplier="67:71" id="SM2-xW-aWM"/>
+                                    <constraint firstAttribute="width" constant="335" id="kg2-BQ-Dgl"/>
+                                    <constraint firstAttribute="height" constant="355" id="oE9-z5-uB7"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JlR-uF-KCM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6ed-hU-oXe"/>
+                            <constraint firstItem="JlR-uF-KCM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ChB-8x-9Lt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aKs-pc-J8B" secondAttribute="bottom" constant="14.5" id="Hln-vn-6en"/>
+                            <constraint firstItem="JlR-uF-KCM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sqo-VY-jXS"/>
+                            <constraint firstItem="JlR-uF-KCM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UML-pi-aCS"/>
+                            <constraint firstItem="aKs-pc-J8B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="WoK-Jd-p3f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JlR-uF-KCM" secondAttribute="trailing" constant="20" id="f9F-Ed-0fs"/>
+                            <constraint firstItem="JlR-uF-KCM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jj8-bt-FWC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aKs-pc-J8B" secondAttribute="trailing" constant="10" id="n0W-Af-adO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="grabImageButton" destination="MkH-dn-U2b" id="od5-lK-M20"/>
+                        <outlet property="photoImageView" destination="JlR-uF-KCM" id="SZl-mK-Srs"/>
+                        <outlet property="photoTitleLabel" destination="bfb-8T-H52" id="l5W-vI-yNP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
